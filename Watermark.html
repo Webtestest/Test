@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>Watermark</title>
+	<meta charset='utf-8'>
+	<link rel="stylesheet" href="Style.css">
+</head>
+<body>
+	<form action="Main.php" method="post" ENCTYPE="multipart/form-data">
+		<p>Загрузите водяной знак в формате .png: 
+		<input type="file" name="stamp">
+		<input type="submit" name="upload" value="Загрузить"></p>
+	</form>
+
+	<?php if (!empty($errorText)) : ?>
+		<span><?php echo $errorText; ?></span>
+	<?php endif; ?>
+
+	<form action="Main.php" method="post">
+		<?php foreach ($scanImages as $key => $value) : if ($value != '.' && $value != '..') : ?>
+			<label class="labelImg">
+				<div class="divImage" style="background-image: url(Images/<?php echo $value; ?>)">
+					<input type="checkbox" id="<?php echo $key . $value; ?>" name="<?php echo $value; ?>" value="<?php echo $value; ?>">
+				</div>
+			</label>
+		<?php endif; endforeach; ?>
+		<div id="waterButtonDiv">
+			<input type="submit" id="waterButton" value="Поставить вотермарку на отмеченных картинках.">
+		</div>
+	</form>
+
+</body>
+</html>
