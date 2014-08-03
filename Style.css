@@ -1,0 +1,36 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+img.images {
+
+}
+
+.divImage {
+	border: 2px solid #dcdcdc;
+	/*float: left;*/
+	display: inline-block;
+	margin: 5px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+	background-color: white;
+	width: 150px;
+	height: 150px;
+}
+.divImage:hover {
+	border: 2px solid #9C9C9C;
+}
+
+#waterButton {
+
+}
+
+.labelImg {
+
+}
+
+#waterButtonDiv {
+	margin: 5px;
+}
